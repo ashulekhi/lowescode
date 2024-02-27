@@ -1,0 +1,76 @@
+Component a function that returns JSX 
+
+Html in a js file is JSX 
+
+
+
+Rule 1 --   
+Tags must be closed 
+
+input in html you may not close 
+
+</input>
+
+Style is an object 
+{"color":"blue"}
+
+<button>
+
+<App />
+
+button 
+
+<button />
+
+Components must start with Caps letter 
+
+npm start starts a server for us running at local macine at 3000 
+
+
+
+when we hit 3000 port a html file is sent to browser 
+
+index.html is having your whole single application 
+
+
+<label *ngIf="">
+
+Framework vs library 
+
+
+arrayindata.map(function(){})
+
+people.map((each)=>{})
+var people = ["Ashu", "Anand" , "lekhi" ,"Some User"]
+
+(each)=>{} // Ashu
+()=>{ return <product />} // Anand
+()=>{ <Post />}
+()=>{
+    return  the view which u want to repeat 
+    return <Cake data={each} />
+}
+
+arrrayname.map((each)=>{
+    return <Element />
+})
+
+
+return (
+
+)
+
+
+
+
+
+Events ---- cut copy click
+
+onEventName={functionCall} // incorrect
+
+onEventName={onlyfunctionName} // i repead dont call them 
+
+example === 
+
+onClick = {updateCake()}
+onClick = {updateCake}
