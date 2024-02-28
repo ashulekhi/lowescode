@@ -74,3 +74,8 @@ example ===
 
 onClick = {updateCake()}
 onClick = {updateCake}
+
+when u need help than call that function 
+
+
+isuserloggedin?<button>:<button>
