@@ -11,6 +11,7 @@ import NewGreet from "./Components/NewGreet"
 import Signup from "./Components/Signup"
 import {cakesdata} from "./data"
 
+
 var users = ["User1", "user2", "user3"]
 var newusers = [{ name: "User1", role: "Developer" }, { name: "User2", role: "Manager" }, { name: "User3", role: "QA" }]
 
@@ -25,14 +26,14 @@ function App() {
   var loginMechanism = "faceBook"
   return (
     <div>
-      <MyContext.Provider value="1Kg Gold">
+      {/* <MyContext.Provider value="1Kg Gold">
       <Navbar loginMechanism={loginMechanism} isuserloggedin={isuserloggedin} />
 
       </MyContext.Provider>
-      <Login loginSuccess={loginSuccess} />
+      <Login loginSuccess={loginSuccess} /> */}
       {/* <Greet /> */}
       {/* <NewAddCake /> */}
-      {/* <AddCake /> */}
+      <AddCake />
       {/* <Signup /> */}
       {/* <Grid data={cakesdata} /> */}
       {/* <Cakelist /> */}

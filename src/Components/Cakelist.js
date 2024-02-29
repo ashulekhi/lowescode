@@ -1,29 +1,28 @@
 import Cake from "./Cake"
-import {cakesdata} from "../data"
-var cake = {
-    name:"Choco Truffle",
-    price:499,
-    image:"chocotruffle.webp",
-    tag:"Must try"
-}
-var cake2 = {
-    name:"Choco  Dark Truffle",
-    price:599,
-    image:"chocotruffle.webp",
-    tag:"Best Seller"
-}
-
-function updateCake(){
-  alert("Called by cake but present in cakelist component")
-}
-
+import { useEffect, useState } from "react"
+import axios from "axios"
+import Loader from "./Loader"
 
 function Cakelist(){
+    var [cakes,setCakes] = useState([])
+    useEffect(()=>{
+        axios({
+            method:"get",
+            url:"http://apiforreactnative.eu-4.evennode.com/api"+"/allcakes"
+        }).then((response)=>{
+            setCakes(response.data.data)
+        })
+    },[])
+    if(!cakes.length){
+        return (
+            <Loader />
+        )
+    }
     return (
-        <div className="row">
+        <div className="row mt-3">
             {
-                cakesdata.map((each)=>{
-                    return <Cake updateCake={updateCake} data={each} />
+                cakes.map((each)=>{
+                    return <Cake data={each} />
                 })
             }
             
