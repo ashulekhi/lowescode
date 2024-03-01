@@ -4,10 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyRouter from './Components/MyRouter';
+import ReebukStore from "./redux/store"
+
+import "./reduxdemo"
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- <MyRouter />
+
+    <Provider store={ReebukStore}>
+        <MyRouter />
+    </Provider>
+//  <MyRouter />
     
  
 );

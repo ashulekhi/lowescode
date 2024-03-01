@@ -11,28 +11,27 @@ import Checkout from "./Checkout"
 import Address from "./Address"
 import Payment from "./Payment"
 import Sumary from "./Summary"
-import { useState } from "react"
+import LoginModal from "./Loginmodal"
+import Cart from "./Cart"
 
 export var dummycakes = []
 
 
 
 function MyRouter(){
-    function loginDone(){
-        setIsloggedin(true)
-    }
-
-    var [isloggedin,setIsloggedin] = useState(localStorage.token?true:false)
     return (
         <div>
+        
             <BrowserRouter>
-            <Navbar isloggedin={isloggedin} />
+            <Navbar/>
+            <LoginModal />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login loginDone={loginDone}/>} />
+                <Route path="/login" element={<Login /> } />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/addcake" element={<AddCake />} />
+                <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} >
                     <Route path="address" element={<Address />} />
                     <Route path="payment" element={<Payment />} />

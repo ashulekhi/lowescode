@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
 import SocialLogin from "./Social"
 import { useState } from "react"
+import { useSelector } from "react-redux"
 
-function Navbar({ isloggedin }) {
+function Navbar() {
+  var isloggedin =  useSelector(state=>state.isloggedin)
    var [searchtext,setSearchtext] = useState()
   function handleSearchtext(e){
     setSearchtext(e.target.value)
@@ -33,7 +35,8 @@ function Navbar({ isloggedin }) {
           </ul>
           <div class="d-flex" role="search">
             {!isloggedin && <Link to="/login"><button class="btn btn-primary" type="submit">Login</button></Link>}
-            {isloggedin && <button onClick={logout} class="btn btn-danger" type="submit">Logout</button>}
+            {isloggedin && <Link to="/cart"><button  class="btn btn-warning m-3" type="button">Cart</button></Link>}
+            {isloggedin && <button onClick={logout} class="btn btn-danger m-3" type="submit">Logout</button>}
           </div>
         </div>
       </div>
