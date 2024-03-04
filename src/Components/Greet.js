@@ -1,30 +1,21 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
-function Greet(){
-    var [company,setCompany] = useState("Lowes")
-    var [userdetails,setUserdetails] =  useState({})
-    // var [data,handlerfunctionofthatdata] =  useState(initialvalue)
-    var [inhand,setInhand] = useState(50000)
+function Greet(props){
+
     useEffect(()=>{
-        alert("Yay!!! Partyeeeyyyyyyyyyyyy")
-    } , [userdetails.company])
-
-    function changeJob(){
-        setCompany("SOme new company")
-    }
-
-    function increment(){
-        setInhand(inhand+inhand*0.2)
-    }
-
-    return (
-        <div>
-            <h1>Salary {inhand}</h1>
-            <h1>Compaby {company}</h1>
-            <button onClick={increment}>Increment</button>
-            <button onClick={changeJob}>Change Job</button>
+        console.log(">>>>>>>>>>>>>>>>>>. rendered")
+    },[])
+   
     
-        </div>
-    )
+        return (
+            
+            <div>
+                {console.log(">>>>>>>>>>")}
+                <h1>Good Afternoon {props.name}</h1>
+               
+            </div>
+        )
+
+    
 }
 export default Greet

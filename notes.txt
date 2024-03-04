@@ -79,3 +79,113 @@ when u need help than call that function
 
 
 isuserloggedin?<button>:<button>
+
+flipkart.com/search?q
+
+{q: "apple" }
+{}
+
+
+axios(
+    {
+        url:"Api url",
+        method:POSR,GEt,put,patch,delete,options,
+        data:{}
+    }
+).then((response)=>{},(error)=>{})
+
+to send to server 
+where to send 
+how to send
+
+/register
+post 
+{email,name,password}
+
+var anjana =  function(){
+
+}
+
+function x (10){
+
+    return function(){}
+}
+
+var anjana = x(10)
+
+
+dispatch({
+    type : "ADD_TO_CART"
+})
+
+
+redux sai bet practise is to create a function that will return action objects
+
+action creators 
+
+function addTOCartCreateor(){
+    return {
+        type:"ADDTOCART"
+    }
+}
+
+
+import {creatSlice} from "@reduxjs/toolkit"
+
+var electronice = creatESlice ({
+    initialState :{
+        tv:10,
+        mobiles:100,
+        microwves:50
+    },
+    name:"Darshan",
+    reducers:{
+        updateTv : function(state,action){
+            state.tvcount +=11
+        },
+        updatMobiles :function(){},
+        updateMicrowaves: function(){}
+    }
+})
+
+export var {updateTv , updatMobiles , updateMicrowaves} = electronice.actions
+
+import updateTv
+
+
+updateTv(10)
+
+
+<Componentname />
+
+export default Login 
+
+
+import Login from "login Path" 
+
+var Login = React.memo(Login)
+
+<Login />
+
+useMemo()
+
+
+function Greet({name}){
+
+    useMemo(()=>{
+return (
+        <div>Hello {name}</div>
+    )
+    })
+    
+}
+
+useMemo(()=>{})
+
+memories a function for the same values if the values are same that function will not be called 
+
+
+useMemo(()=>{},[country , state, ])
+
+
+use

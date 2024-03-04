@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {createLoginAction} from "../redux/actions"
 // import $ from "jquery"
 
 function Login({ modal }) {
@@ -41,9 +42,7 @@ function Login({ modal }) {
                 console.log("response from api ", response.data)
                 if (response.data.token) {
                     localStorage.token = response.data.token
-                    dispatch({
-                        type: "LOGIN_SUCCESS"
-                    })
+                    dispatch(createLoginAction())
                     navigate("/")
 
                 }

@@ -14,6 +14,13 @@ export function AuthReducer(state = {
         return state
     }
 
+    case "REMOVE_ITEM_SUCCESS":{
+      state = {...state}
+      state.cartitems.splice(action.payload,1)
+      state.cartitems = [...state.cartitems]
+      return state
+    }
+
     case "CART_ITEMS_SUCCESS" :{
       state= {...state}
       state.cartitems = action.payload
@@ -29,4 +36,9 @@ export function AuthReducer(state = {
 
     default : return state
   }
+}
+
+
+export function MobileReducer(state={},action){
+
 }

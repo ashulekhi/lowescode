@@ -13,6 +13,7 @@ import Payment from "./Payment"
 import Sumary from "./Summary"
 import LoginModal from "./Loginmodal"
 import Cart from "./Cart"
+import Test from "./Test"
 
 export var dummycakes = []
 
@@ -38,6 +39,7 @@ function MyRouter(){
                     <Route path="summary" element={<Sumary />} />
                 </Route>
                 <Route path="/*" element={<Pagenotfound />} />
+                <Route path="/test" element={<Test />} />
                 <Route path="/details/:cakeid?" element={<Cakedetails />} />
             </Routes>
             </BrowserRouter>

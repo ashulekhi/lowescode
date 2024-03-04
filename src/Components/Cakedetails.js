@@ -1,42 +1,51 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect, useState , useRef } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import Loader from "./Loader"
 import {Modal} from "bootstrap"
 
 function Cakedetails(){
+  var Shaktiman = useRef()
     var params = useParams()
     var navigate = useNavigate()
     var cakeid = params.cakeid
     var [cakedetails,setCakedetails] =  useState()
     var [loginModal,setLoginModal] = useState() 
+    var [isAdding,setisAdding] = useState(false)
 
     function addToCart(){
-      if(localStorage.token){
-        var requestObj = {
-          cakeid:cakedetails.cakeid,
-          name:cakedetails.name,
-          price:cakedetails.price,
-          image:cakedetails.image,
-          weight:cakedetails.weight,
-        }
-        axios({
-        url:process.env.REACT_APP_API_BASE_URL+"/addcaketocart",
-        method:"post",
-        data:requestObj,
-        headers:{
-          Authorization:localStorage.token
-        }
-        }).then((response)=>{
-          console.log("response from add to cart api is" , response.data)
-        }, (error)=>{
-          console.log("Error from api" , error)
-        })
-      }
-      else{
-        // loginModal.show()
-        navigate("/login")
-      }
+      console.log("Shaktiman ........" , Shaktiman.current)
+      Shaktiman.current.style.backgroundColor="red"
+      // if(localStorage.token){
+      //   setisAdding(true)
+      //   var requestObj = {
+      //     cakeid:cakedetails.cakeid,
+      //     name:cakedetails.name,
+      //     price:cakedetails.price,
+      //     image:cakedetails.image,
+      //     weight:cakedetails.weight,
+      //   }
+      //   axios({
+      //   url:process.env.REACT_APP_API_BASE_URL+"/addcaketocart",
+      //   method:"post",
+      //   data:requestObj,
+      //   headers:{
+      //     Authorization:localStorage.token
+      //   }
+      //   }).then((response)=>{
+      //     console.log("response from add to cart api is" , response.data)
+      //     if(response.data.data){
+      //       navigate("/cart")
+      //     }
+      //   }, (error)=>{
+      //   setisAdding(false)
+      //     console.log("Error from api" , error)
+      //   })
+      // }
+      // else{
+      //   // loginModal.show()
+      //   navigate("/login")
+      // }
     }
 
     useEffect(()=>{
@@ -86,8 +95,9 @@ function Cakedetails(){
             </div>
             {/* <!-- Buttons for buy now and add to cart --> */}
             <div class="gap-2 row">
-            <button onClick={addToCart} class="btn btn-warning col" type="button">Add to Cart</button>
-              <button class="btn btn-primary col" type="button">Buy Now</button>
+           {!isAdding?<button onClick={addToCart} class="btn btn-warning col" type="button">Add to Cart</button>
+            :<button disabled class="btn btn-warning col" type="button">Adding to Cart...</button>}
+              <button  ref={Shaktiman} class="btn btn-primary col" type="button">Buy Now</button>
             </div>
           </div>
         </div>

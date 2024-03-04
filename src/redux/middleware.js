@@ -4,7 +4,6 @@ export function mymiddleware(state) {
     return function (next) {
         return function (action) {
             console.log(">>>>>>>>>>>>>>>>>>>. coming here ")
-            next(action)
             if (action.type == "FETCH_CART_ITEMS") {
                 //api call
                 axios({

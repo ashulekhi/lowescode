@@ -10,7 +10,6 @@ function Search(){
     var [isloading,setIsloading] =  useState(true)
     var text = query.get("q")
 
-   
         useEffect(()=>{
         setIsloading(true)
             axios({
